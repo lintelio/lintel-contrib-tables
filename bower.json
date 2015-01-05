@@ -1,0 +1,31 @@
+{
+  "name": "lintel-contrib-tables",
+  "version": "0.1.0",
+  "description": "Tables for lintel.",
+  "homepage": "https://github.com/lintelio/lintel-contrib-tables",
+  "repository": "https://github.com/lintelio/lintel-contrib-tables.git",
+  "keywords": [
+    "lintelmodule",
+    "lintel"
+  ],
+  "main": [
+    "sass/tables.sass",
+    "dist/tables.min.css"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "lintel": "~0.1.1"
+  },
+  "devDependencies": {},
+  "ignore": [
+    "/.*",
+    "sass/lintel-core-loader.scss"
+  ],
+  "authors": [
+    {
+      "name": "Marius Craciunoiu",
+      "email": "",
+      "url": "mariusc23.com"
+    }
+  ]
+}
