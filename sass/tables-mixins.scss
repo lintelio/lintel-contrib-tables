@@ -1,8 +1,13 @@
 // Please try to maintain the same code style as outlined here:
 // https://github.com/lintelio/lintel/blob/master/CONTRIBUTING.md
 
-@mixin make-bacon($bg, $border, $text) {
-  background-color: $bg;
-  border-color: $border;
-  color: $text;
+@mixin table-size($className, $padding-y, $padding-x) {
+  .#{$className} > thead > tr > th,
+  .#{$className} > thead > tr > td,
+  .#{$className} > tbody > tr > th,
+  .#{$className} > tbody > tr > td,
+  .#{$className} > tfoot > tr > th,
+  .#{$className} > tfoot > tr > td {
+    padding: $padding-y $padding-x;
+  }
 }

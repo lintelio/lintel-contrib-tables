@@ -22,61 +22,152 @@ Once the module has been installed, you will have to load it in your main SASS f
 @import "bower_components/lintel-contrib-tables/sass/tables.scss"
 ```
 
-
-
 You can use [wiredep](https://github.com/taptapship/wiredep) or [grunt-wiredep](https://github.com/stephenplusplus/grunt-wiredep) to automatically inject files in your build process.
 
 
 ## Variables
 Check the vars file in the `sass` folder to see the full list of variables you can customize.
 
-#### $bacon-bg
-Default value: `#4b77be`  
+#### $table-padding-y-base
+Table cell padding-top and padding-bottom.
 
-Change the bacon background.
+#### $table-padding-x-base
+Table cell padding-left and padding-right.
 
-#### $bacon-border
-Default value: `#f00`  
+#### $table-border
+Default value: `$border-base`  
 
-Change the bacon border color.
+Border color.
 
-#### $bacon-text
-Default value: `#fff`  
+#### $table-border-th
+Default value: `$border-dakrest`  
 
-Change the bacon text color.
+Border under table head.
+
+#### $table-divided-border
+Default value: `$table-border`  
+
+Vertical divider border color. Can also use `$table-divided-border-style` to change to `dotted` or `dashed`.
+
+#### $table-striped-bg
+Default value: `$bg-light`  
+
+Striped table background.
+
+#### $table-hover-bg
+Default value: `$bg-base`  
+
+`<td>` background on row hover.
+
+
+#### $table-edge-padding-x
+Default value: `$table-padding-x-base + $cushion-base`  
+
+Changes the padding-left of the first column and the padding-right of the last column. This can be useful if you use a grid and want the table to expand to the edge (gutter). 
+
+For example, you could change it to something like: `$table-padding-x-base + $grid-gutter` and place it outside of the column or have a class with negative margins to pull it out of the gutter.
+
+If set to `0`, the `.table-edge` selectors will not be compiled in the CSS.
 
 
 ## Mixins
 Check the mixins file in the `sass` folder to see how you can extend this module.
 
-#### make-bacon($bg, $border, $text)
-Default $bg: `$bacon-bg`  
-Default $border: `$bacon-border`  
-Default $text: `$bacon-text`  
-
-Sets the background, border, and text color of an element.
+#### table-size($className, $padding-y, $padding-x)
+Creates a new table-size class.
 
 ```scss
-.bacon-primary {
-  @include make-bacon(#fff, #f00, #000);
+@include table-size("table-xl", 30px, 40px);
+```
+
+```css
+.table-xl > thead > tr > th, 
+.table-xl > thead > tr > td, 
+.table-xl > tbody > tr > th, 
+.table-xl > tbody > tr > td, 
+.table-xl > tfoot > tr > th, 
+.table-xl > tfoot > tr > td {
+  padding: 12px 20px;
 }
 ```
 
 
 ## Examples
 
-#### Bacon
+#### Base
 ```html
-<div class="bacon">
-  Hello world!
-</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Heading 1</th>
+      <th>Heading 2</th>
+      <th>Heading 3</th>
+      <th>Heading 4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cell 1</td>
+      <td>Cell 2</td>
+      <td>Cell 3</td>
+      <td>Cell 4</td>
+    </tr>
+    <tr>
+      <td>Cell 1</td>
+      <td>Cell 2</td>
+      <td>Cell 3</td>
+      <td>Cell 4</td>
+    </tr>
+    <tr>
+      <td>Cell 1</td>
+      <td>Cell 2</td>
+      <td>Cell 3</td>
+      <td>Cell 4</td>
+    </tr>
+  </tbody>
+</table>
 ```
 
-#### Primary Bacon
+#### Modifiers
 ```html
-<div class="bacon bacon-primary">
-  Hello world!
-</div>
+<table class="table table-bordered table-divided table-edge table-hover table-striped">
+  ...
+</table>
+```
+
+#### States
+```html
+<table class="table">
+  <thead>
+    <tr>
+      <th>Heading 1</th>
+      <th>Heading 2</th>
+      <th>Heading 3</th>
+      <th>Heading 4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-primary">
+      <td>Primary BG 1</td>
+      <td>Primary BG 2</td>
+      <td>Primary BG 3</td>
+      <td>Primary BG 4</td>
+    </tr>
+    <tr>
+      <td>Cell 1</td>
+      <td>Cell 2</td>
+      <td>Cell 3</td>
+      <td class="table-success">Success BG 4</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+#### Condensed
+```html
+<table class="table table-sm">
+  ...
+</table>
 ```
 
 

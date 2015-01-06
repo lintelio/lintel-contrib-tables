@@ -5,47 +5,159 @@
 @import 'tables-functions';
 @import 'tables-mixins';
 
+// Wrap / Responsive
+// -----------------
+.table-wrap {
+  min-height: 0.01%;
+  overflow-x: auto;
+}
+
 
 // Base
 // ----
-.bacon {
-  background-color: $bacon-base-bg;
-  border: 1px solid $bacon-base-border;
-  border-radius: $bacon-border-radius;
-  color: $bacon-base-text;
-  padding: $bacon-padding-y $bacon-padding-x;
-  margin-bottom: $bacon-margin-y;
+.table {
+  max-width: 100%;
+  text-align: left;
+  width: 100%;
+}
+
+
+// Divided
+// -------
+.table-divided {
+  > thead > tr > th + th,
+  > thead > tr > td + td,
+  > tbody > tr > th + th,
+  > tbody > tr > td + td,
+  > tfoot > tr > th + th,
+  > tfoot > tr > td + td {
+    border-left: 1px $table-divided-border-style $table-divided-border;
+  }
+}
+
+
+// Bordered
+// --------
+.table-bordered {
+  border: 1px solid $table-border
+}
+
+
+// Striped
+// -------
+.table-striped > tbody > tr:nth-child(odd) > td {
+  background-color: $table-striped-bg;
+}
+
+
+// Edge
+// ----
+@if $table-edge-padding-x > 0 {
+  .table-edge {
+    > thead > tr > th:first-child,
+    > thead > tr > td:first-child,
+    > tbody > tr > th:first-child,
+    > tbody > tr > td:first-child,
+    > tfoot > tr > th:first-child,
+    > tfoot > tr > td:first-child {
+      padding-left: $table-edge-padding-x;
+    }
+
+    > thead > tr > th:last-child,
+    > thead > tr > td:last-child,
+    > tbody > tr > th:last-child,
+    > tbody > tr > td:last-child,
+    > tfoot > tr > th:last-child,
+    > tfoot > tr > td:last-child {
+      padding-right: $table-edge-padding-x;
+    }
+  }
+}
+
+
+// Hover
+// -----
+.table-hover.table-hover > tbody > tr:hover > td:not(.table-nested) {
+  background-color: $table-hover-bg;
+}
+
+
+// Thead
+// -----
+.table > thead:first-child > tr:first-child > th {
+  border-top: 0;
+}
+
+
+// Th
+// --
+.table > thead > tr > th {
+  border-bottom: $table-border-width-th solid $table-border-th;
+}
+
+
+// Cells
+// -----
+.table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > th,
+.table > tfoot > tr > td {
+  border-top: 1px solid $table-border;
+  line-height: $table-line-height;
+  padding: $table-padding-y-base $table-padding-x-base;
+  vertical-align: top;
+}
+
+
+// Sizes
+// -----
+@include table-size("table-sm", $table-padding-y-sm, $table-padding-x-sm);
+@include table-size("table-lg", $table-padding-y-lg, $table-padding-x-lg);
+
+
+// Nested
+// ------
+.table-nested.table-nested.table-nested {
+  padding: 0;
 }
 
 
 // States
 // ------
 // Primary
-.bacon-primary {
-  @include make-bacon($bg: $bacon-primary-bg, $border: $bacon-primary-border, $text: $bacon-primary-text);
+.table-primary.table-primary.table-primary.table-primary,
+.table-primary.table-primary.table-primary > td {
+  background-color: $state-primary-bg;
 }
 
 // Secondary
-.bacon-secondary {
-  @include make-bacon($bg: $bacon-secondary-bg, $border: $bacon-secondary-border, $text: $bacon-secondary-text);
+.table-secondary.table-secondary.table-secondary.table-secondary,
+.table-secondary.table-secondary.table-secondary > td {
+  background-color: $state-secondary-bg;
 }
 
 // Error
-.bacon-error {
-  @include make-bacon($bg: $bacon-error-bg, $border: $bacon-error-border, $text: $bacon-error-text);
+.table-error.table-error.table-error.table-error,
+.table-error.table-error.table-error > td {
+  background-color: $state-error-bg;
 }
 
 // Warning
-.bacon-warning {
-  @include make-bacon($bg: $bacon-warning-bg, $border: $bacon-warning-border, $text: $bacon-warning-text);
+.table-warning.table-warning.table-warning.table-warning,
+.table-warning.table-warning.table-warning > td {
+  background-color: $state-warning-bg;
 }
 
 // Success
-.bacon-success {
-  @include make-bacon($bg: $bacon-success-bg, $border: $bacon-success-border, $text: $bacon-success-text);
+.table-success.table-success.table-success.table-success,
+.table-success.table-success.table-success > td {
+  background-color: $state-success-bg;
 }
 
 // Info
-.bacon-info {
-  @include make-bacon($bg: $bacon-info-bg, $border: $bacon-info-border, $text: $bacon-info-text);
+.table-info.table-info.table-info.table-info,
+.table-info.table-info.table-info > td {
+  background-color: $state-info-bg;
 }

@@ -2,44 +2,32 @@
 // https://github.com/lintelio/lintel/blob/master/CONTRIBUTING.md
 
 // Global
-$bacon-padding-y:         $cushion-y-md !default;
-$bacon-padding-x:         $cushion-x-md !default;
+$table-padding-y-sm:        $cushion-y-sm;
+$table-padding-x-sm:        $cushion-x-sm;
 
-$bacon-margin-y:          $cushion-y-lg !default;
+$table-padding-y-md:        $cushion-y-md;
+$table-padding-x-md:        $cushion-x-md;
 
-$bacon-border-radius:     $border-radius-base !default;
+$table-padding-y-lg:        $cushion-y-lg;
+$table-padding-x-lg:        $cushion-x-lg;
 
-// Base
-$bacon-base-bg:           $bg-light !default;
-$bacon-base-border:       $border-base !default;
-$bacon-base-text:         $text-base !default;
+$table-padding-y-base:      $table-padding-y-md;
+$table-padding-x-base:      $table-padding-x-md;
 
-// Primary
-$bacon-primary-bg:        $state-primary-bg !default;
-$bacon-primary-border:    $state-primary-border !default;
-$bacon-primary-text:      $state-primary-text !default;
+$table-border:              $border-base;
+$table-border-th:           $border-darkest;
+$table-border-width-th:     1px;
+$table-line-height:         $line-height-base;
 
-// Secondary
-$bacon-secondary-bg:      $state-secondary-bg !default;
-$bacon-secondary-border:  $state-secondary-border !default;
-$bacon-secondary-text:    $state-secondary-text !default;
+// Divided
+$table-divided-border-style:solid;
+$table-divided-border:      $table-border;
 
-// Error
-$bacon-error-bg:          $state-error-bg !default;
-$bacon-error-border:      $state-error-border !default;
-$bacon-error-text:        $state-error-text !default;
+// Striped
+$table-striped-bg:          $bg-light;
 
-// Warning
-$bacon-warning-bg:        $state-warning-bg !default;
-$bacon-warning-border:    $state-warning-border !default;
-$bacon-warning-text:      $state-warning-text !default;
+// Hover
+$table-hover-bg:            $bg-base;
 
-// Success
-$bacon-success-bg:        $state-success-bg !default;
-$bacon-success-border:    $state-success-border !default;
-$bacon-success-text:      $state-success-text !default;
-
-// Info
-$bacon-info-bg:           $state-info-bg !default;
-$bacon-info-border:       $state-info-border !default;
-$bacon-info-text:         $state-info-text !default;
+// Edge
+$table-edge-padding-x:      $cushion-base + $table-padding-x-base;

@@ -14,7 +14,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "lintel": "~0.1.1"
+    "lintel": "~0.1.2"
   },
   "devDependencies": {},
   "ignore": [
