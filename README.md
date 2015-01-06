@@ -3,7 +3,7 @@ lintel-contrib-tables
 
 > Tables for lintel.
 
-[![npm](https://img.shields.io/npm/v/lintel-contrib-tables.svg)](https://github.com/lintelio/lintel-contrib-tables)
+[![npm](https://img.shields.io/npm/v/lintel-contrib-tables.svg)](https://www.npmjs.com/package/lintel-contrib-tables)
 [![Bower](https://img.shields.io/bower/v/lintel-contrib-tables.svg)](https://github.com/lintelio/lintel-contrib-tables)
 
 
