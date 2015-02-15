@@ -1,6 +1,6 @@
 {
   "name": "lintel-contrib-tables",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tables for lintel.",
   "homepage": "https://github.com/lintelio/lintel-contrib-tables",
   "repository": "https://github.com/lintelio/lintel-contrib-tables.git",
@@ -9,7 +9,7 @@
     "lintel"
   ],
   "main": [
-    "sass/tables.sass",
+    "sass/tables.scss",
     "dist/tables.min.css"
   ],
   "license": "MIT",
